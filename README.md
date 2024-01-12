@@ -11,7 +11,7 @@ $$\begin{aligned}
 p &= 99719 \ Pa \\
 T &= 293.15 \ K \\
 u &= 686.47 \ m/s \\
-v &= 0 \ \mathrm{m/s}
+v &= 0 \ m/s
 \end{aligned}$$
 折角角度为15°
 
