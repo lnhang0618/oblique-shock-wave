@@ -85,6 +85,7 @@ $$
 其中，$\theta$ 是斜边与水平方向的夹角，$u$ 和 $v$ 分别是直角坐标系下的速度分量。
 
 在斜面坐标系中，我们将 $\eta$ 方向定为垂直于壁面的方向。因此，在斜边处，我们将垂直于壁面的速度分量反向处理，以模拟流体的反射行为。这可以表示为：
+
 $$ v_{\xi,\eta} = -v_{\xi,\eta} $$
 
 之后我们通过逆变换将经过反向处理后的速度分量变换回直角坐标系。
@@ -135,7 +136,7 @@ $$\tan(\theta) = \frac{2 \cot(\beta) \left( M_1^2 \sin^2 \beta - 1 \right)}{M_1^
 
 ### 实现步骤
 #### 预测器
-预测器方程用于计算单元格在下一个时间步的状态变量 $U_{ij}^{n+1}$，其中 $A_{ij}$ 是单元格的面积，在三维中对应体积，$\Delta t$是时间步长。状态变量的更新涉及对流项和耗散项的通量向量。
+预测器方程用于计算单元格在下一个时间步的状态变量 $U_{ij}^{n+1}$，其中 $A_{ij}$ 是单元格的面积，在三维中对应体积，而$\Delta t$是时间步长。状态变量的更新涉及对流项和耗散项的通量向量。
 
 $$
 U_{ij}^{n+1} = U_{ij}^n - \frac{\Delta t}{A_{ij}} \left( \frac{\partial \vec{E}^*_{i+\frac{1}{2},j}}{\partial \xi} [L_{i\pm\frac{1}{2},j}] + \frac{\partial \vec{F}^*_{i,j+\frac{1}{2}}}{\partial \eta} [L_{i,j\pm\frac{1}{2}}] \right)
@@ -144,10 +145,7 @@ $$
 其中通量向量 $\vec{E}^*_{i+\frac{1}{2},j}$ 和 $\vec{F}^*_{i,j+\frac{1}{2}}$ 以及耗散项 $D$ 定义如下：
 
 $$
-\frac{\partial \vec{E}^*_{i+\frac{1}{2},j}}{\partial \xi} [L_{i\pm\frac{1}{2},j}] = (\vec{E}_{i+1} - D_{i+1}(U_{i+1} - U_{i}))[L_2] + (\vec{E}_{i} + D_{i}(U_{i} - U_{i-1}))[L_4]
-$$
-
-$$
+\frac{\partial \vec{E}^*_{i+\frac{1}{2},j}}{\partial \xi} [L_{i\pm\frac{1}{2},j}] = (\vec{E}_{i+1} - D_{i+1}(U_{i+1} - U_{i}))[L_2] + (\vec{E}_{i} + D_{i}(U_{i} - U_{i-1}))[L_4] \\
 \vec{E}_{i} = \vec{E}_{i}n_{x} + \vec{F}_{i}n_{y}
 $$
 
@@ -166,7 +164,7 @@ $$
 U_{ij}^{n+1} = \frac{1}{2} \left[ U_{ij}^n + U_{ij}^{n+1} \right] - \frac{\Delta t}{A_{ij}} \left( \frac{\partial \vec{E}_{i-\frac{1}{2},j}^{**}}{\partial \xi} \left[ L_{i \pm \frac{1}{2},j} \right] + \frac{\partial \vec{F}_{i,j - \frac{1}{2}}^{**}}{\partial \eta} \left[ L_{i,j \pm \frac{1}{2}} \right] \right)
 $$
 
-$A_{ij}$ 是单元格的面积，$\Delta t$ 是时间步长。
+其中$A_{ij}$ 是单元格的面积，而$\Delta t$ 是时间步长。
 
 通量向量 $\vec{E}_{i-\frac{1}{2},j}^{**}$ 和 $\vec{F}_{i,j-\frac{1}{2}}^{**}$ 的扩展包括对流项和耗散项：
 
