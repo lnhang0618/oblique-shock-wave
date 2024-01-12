@@ -112,9 +112,7 @@ $$ U_{\text{out}} = 2 \cdot U_{\text{out}-1} - U_{\text{out}-2} $$
 
 ### 激波求解
 如下关系式描述了折角，马赫数与激波角度的关系：
-$$
-\tan(\theta) = \frac{2 \cot(\beta) \left( M_1^2 \sin^2 \beta - 1 \right)}{M_1^2 (\gamma + \cot^2(\beta)) + 2}
-$$
+$$\tan(\theta) = \frac{2 \cot(\beta) \left( M_1^2 \sin^2 \beta - 1 \right)}{M_1^2 (\gamma + \cot^2(\beta)) + 2}$$
 
 ![激波](/images/shock_waves.png)
 
