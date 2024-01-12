@@ -7,14 +7,12 @@
 
 ### 问题设定
 考虑一个半无穷大空间中的均匀来流，其流动方向如上图所示箭头指向。流动的具体状态参数为:
-$$
-\begin{aligned}
-p &= 99719 \ \mathrm{Pa} \\
-T &= 293.15 \ \mathrm{K} \\
-u &= 686.47 \ \mathrm{m/s} \\
+$$\begin{aligned}
+p &= 99719 \ Pa \\
+T &= 293.15 \ K \\
+u &= 686.47 \ m/s \\
 v &= 0 \ \mathrm{m/s}
-\end{aligned}
-$$
+\end{aligned}$$
 折角角度为15°
 
 ### 控制方程简述
