@@ -35,6 +35,7 @@ $$
 
 ### 方法简介
 本研究中采用代数方法生成网格，其代数方程描述如下：
+
 $$
 \begin{align*}
 dx &= \frac{L}{nx}, \\
@@ -45,6 +46,7 @@ H - (x - 1) \cdot \tan(15^\circ) & \text{if } x > 1.
 \end{cases}
 \end{align*}
 $$
+
 其中，L 和 H 分别代表计算域的宽度和高度，nx 和 ny 为网格分割数。
 
 ### 结果展示
@@ -89,7 +91,9 @@ $$ v_{\xi,\eta} = -v_{\xi,\eta} $$
 
 #### 其他边界的处理
 对于模型中的其他边界，我们采用零梯度边界条件。这意味着在边界处流体的属性（如速度、压力）沿边界的法向不发生变化。数学上，这可以表示为：
+
 $$ U_{\text{out}} = 2 \cdot U_{\text{out}-1} - U_{\text{out}-2} $$
+
 这里，$U_{\text{out}}$ 是边界上的流体属性，$U_{\text{out}-1}$ 和 $U_{\text{out}-2}$ 是靠近边界的内部网格点的对应属性值。
 
 ## 有限体积法和激波处理
@@ -114,6 +118,7 @@ $$ U_{\text{out}} = 2 \cdot U_{\text{out}-1} - U_{\text{out}-2} $$
 
 ### 激波求解
 如下关系式描述了折角，马赫数与激波角度的关系：
+
 $$\tan(\theta) = \frac{2 \cot(\beta) \left( M_1^2 \sin^2 \beta - 1 \right)}{M_1^2 (\gamma + \cot^2(\beta)) + 2}$$
 
 ![激波](/images/shock_waves.png)
