@@ -6,12 +6,14 @@
 ![问题描述](/images/describe.jpg)
 
 ### 问题设定
-考虑一个半无穷大空间中的均匀来流，其流动方向如上图所示箭头指向。流动的具体状态参数为:
-$$
-p = 99719  Pa \\
-T = 293.15  K \\
-u = 686.47  m/s \\
-v = 0  m/s
+考虑一个半无穷大空间中的均匀来流，其流动方向如上图所示箭头指向。流动的具体状态参数为：
+$$ 
+\begin{align*}
+p &= 99719 \ \mathrm{Pa} \\
+T &= 293.15 \ \mathrm{K} \\
+u &= 686.47 \ \mathrm{m/s} \\
+v &= 0 \ \mathrm{m/s}
+\end{align*}
 $$
 折角角度为15°
 
@@ -32,14 +34,14 @@ $$
 ### 方法简介
 本研究中采用代数方法生成网格，其代数方程描述如下：
 $$
-\begin{aligned}
+\begin{align*}
 dx &= \frac{L}{nx}, \\
 dy &= 
 \begin{cases}
 \frac{H}{ny} & \text{if } x < 1, \\
 H - (x - 1) \cdot \tan(15^\circ) & \text{if } x > 1.
 \end{cases}
-\end{aligned}
+\end{align*}
 $$
 其中，L 和 H 分别代表计算域的宽度和高度，nx 和 ny 为网格分割数。
 
