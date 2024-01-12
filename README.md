@@ -208,7 +208,9 @@ NND通过minmod函数控制界面处的通量流动，并总是选取最小的�
 ## 显示时间推进
 ### 方法概述
 为了保证稳定性，显式时间推进需要考虑时间步长，我们通过如下方法计算Marcormark和NND+VanLeer中用到的dt：
+
 $$ \Delta t =\frac{1}{\frac{|u_{i,j}|}{dx} + \frac{|v_{i,j}|}{dy} + c_{i,j} \left( \frac{1}{dx^2} + \frac{1}{dy^2} \right)^{0.5}} $$
+
 循环计算得到最小的dt作为更新时间步。
 
 
