@@ -115,6 +115,7 @@ $$ U_{\text{out}} = 2 \cdot U_{\text{out}-1} - U_{\text{out}-2} $$
 $$
 \tan(\theta) = \frac{2 \cot(\beta) \left( M_1^2 \sin^2 \beta - 1 \right)}{M_1^2 (\gamma + \cot^2(\beta)) + 2}
 $$
+
 ![激波](/images/shock_waves.png)
 
 通过迭代计算可以快速解出$ \beta $的解析值。
