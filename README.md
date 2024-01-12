@@ -138,11 +138,11 @@ $$\tan(\theta) = \frac{2 \cot(\beta) \left( M_1^2 \sin^2 \beta - 1 \right)}{M_1^
 #### 预测器
 预测器方程用于计算单元格在下一个时间步的状态变量 $U_{ij}^{n+1}$，其中 $A_{ij}$ 是单元格的面积，在三维中对应体积，而 $\Delta t$ 是时间步长。状态变量的更新涉及对流项和耗散项的通量向量
 
-$$ U_{ij}^{n+1} = U_{ij}^n - \frac{\Delta t}{A_{ij}} \left( \frac{\partial \vec{E}^*_{i+\frac{1}{2},j}}{\partial \xi} [L_{i\pm\frac{1}{2},j}] + \frac{\partial \vec{F}^*_{i,j+\frac{1}{2}}}{\partial \eta} [L_{i,j\pm\frac{1}{2}}] \right) $$
+$$ U_{ij}^{n+1} = U_{ij}^n - \frac{\Delta t}{A_{ij}} \left( \frac{\partial \vec{E}^{*}_{i+\frac{1}{2},j}}{\partial \xi} [L_{i\pm\frac{1}{2},j}] + \frac{\partial \vec{F}^{*}_{i,j+\frac{1}{2}}}{\partial \eta} [L_{i,j\pm\frac{1}{2}}] \right) $$
 
-其中通量向量 $ \vec{E}^*_{i+\frac{1}{2},j} $ 和 $ \vec{F}^*_{i,j+\frac{1}{2}} $ 以及耗散项 $ D $ 定义如下：
+其中通量向量 $ \vec{E}^{*}_{i+\frac{1}{2},j} $ 和 $ \vec{F}^{*}_{i,j+\frac{1}{2}} $ 以及耗散项 $ D $ 定义如下：
 
-$$ \frac{\partial \vec{E}^*_{i+\frac{1}{2},j}}{\partial \xi} [L_{i\pm\frac{1}{2},j}] = (\vec{E}_{i+1} - D_{i+1}(U_{i+1} - U_{i}))[L_2] + (\vec{E}_{i} + D_{i}(U_{i} - U_{i-1}))[L_4] \\
+$$ \frac{\partial \vec{E}^{*}_{i+\frac{1}{2},j}}{\partial \xi} [L_{i\pm\frac{1}{2},j}] = (\vec{E}_{i+1} - D_{i+1}(U_{i+1} - U_{i}))[L_2] + (\vec{E}_{i} + D_{i}(U_{i} - U_{i-1}))[L_4] \\
 \vec{E}_{i} = \vec{E}_{i}n_{x} + \vec{F}_{i}n_{y} $$
 
 耗散项 $D_{i+\frac{1}{2}}$ 和 $D_{i}$ 包括压力和人工耗散系数的函数：
